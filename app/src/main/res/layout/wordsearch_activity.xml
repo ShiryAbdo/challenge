@@ -20,7 +20,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-             android:layout_weight="0.50"
+             android:layout_weight="0.4"
             android:layout_margin="@dimen/_2sdp"
             android:background="@drawable/dotted_border"
             android:gravity="center"
@@ -54,6 +54,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:layout_weight=".5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -84,6 +85,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_weight=".3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -109,22 +111,18 @@
 
         <LinearLayout
 
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0.4"
             android:layout_margin="@dimen/_2sdp"
-            android:layout_weight="0.70"
-            android:layout_marginEnd="@dimen/_3sdp"
             android:background="@drawable/dotted_border"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginRight="@dimen/_3sdp">
+            android:orientation="horizontal">
 
             <com.challenge.swaqny.challenge.ui.components.GameTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingRight="@dimen/wordsearchactivity_indicator_text_padding_left"
-                android:text="Score"
+                 android:text="Score"
                 android:textSize="15sp" />
 
             <com.challenge.swaqny.challenge.ui.components.GameBoldTextView
@@ -143,9 +141,9 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/pager"
-        android:layout_width="match_parent"
+         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="2" />
 
     <LinearLayout
         android:id="@+id/llBottom"
