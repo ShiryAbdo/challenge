@@ -13,24 +13,14 @@ import com.challenge.swaqny.challenge.ui.gameplay.MenuActivity;
 
 
 public class SplashActivity extends Activity {
-    private static int SPLASH_TIME_OUT = 3000;
+    private static int SPLASH_TIME_OUT = 2000;
   ImageView imageView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
-        imageView2 = findViewById(R.id.imageView2);
-        imageView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(SplashActivity.this,  MenuActivity.class);
-                startActivity(i);
 
-                // close this activity
-                finish();
-            }
-        });
         new Handler().postDelayed(new Runnable() {
 
 			/*

@@ -24,21 +24,17 @@ import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
 
-public class MenuActivity extends  Activity implements View.OnClickListener, RewardedVideoAdListener {
+public class MenuActivity extends  Activity implements View.OnClickListener {
 
     private final static String MENU_PREF_NAME = "menu_prefs";
     private final static String FIRST_TIME = "first_time";
 
-    private final static long ROUND_TIME_IN_MS = 60000;
-    LinearLayout liner_button;
-    private RewardedVideoAd mAd;
+     LinearLayout liner_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loadRewardedVideoAd();
-        // categoryId = R.string.ga_menu_screen;
-        // Check if first time opening app, show splash screen
+
         SharedPreferences prefs = getSharedPreferences(MENU_PREF_NAME, MODE_PRIVATE);
         boolean isFirstTime = prefs.getBoolean(FIRST_TIME, true);
         if (isFirstTime) {
@@ -46,17 +42,10 @@ public class MenuActivity extends  Activity implements View.OnClickListener, Rew
             editor.putBoolean(FIRST_TIME, false);
             editor.apply();
 
-            Intent i = new Intent(getApplicationContext(), SplashActivity.class);
-            startActivity(i);
         }
 
         setContentView(R.layout.activity_menu2);
-        loadRewardedVideoAd();
-        mAd = MobileAds.getRewardedVideoAdInstance(this);
-        mAd.setRewardedVideoAdListener(this);
-        if (mAd.isLoaded()) {
-            mAd.show();
-        }
+
         liner_button = (LinearLayout) findViewById(R.id.liner_button);
         animate(findViewById(R.id.bMenuEasy3), R.anim.left_in);
         animate(findViewById(R.id.bMenuMedium4), R.anim.left_in2);
@@ -78,21 +67,12 @@ public class MenuActivity extends  Activity implements View.OnClickListener, Rew
 //        findViewById(R.id.bMenuAdvanced).setOnClickListener(this);
     }
 
-    private void loadRewardedVideoAd() {
-        mAd = MobileAds.getRewardedVideoAdInstance(this);
-        mAd.setRewardedVideoAdListener(this);
-        if (mAd.isLoaded()) {
-            mAd.show();
-        }
-        mAd.loadAd("ca-app-pub-1858974607441283/7740513326", new AdRequest.Builder().build());
-    }
+
 
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.bMenuSignIn) {
-            //   mInSignInFlow = true;
-            //  mSignInClicked = true;
-            //  mGoogleApiClient.connect();
+
             return;
         }
         String level;
@@ -103,8 +83,7 @@ public class MenuActivity extends  Activity implements View.OnClickListener, Rew
                 gd = GameDifficulty.Easy;
                 ga_button_id = R.string.ga_click_easy;
                 level = gd;
-                loadRewardedVideoAd();
-                break;
+                 break;
             case R.id.bMenuMedium4:
                 gd = GameDifficulty.Medium;
                 ga_button_id = R.string.ga_click_medium;
@@ -143,9 +122,8 @@ public class MenuActivity extends  Activity implements View.OnClickListener, Rew
 //                gd = GameDifficulty.Advanced;
 //                break;
         }
-        //   analyticsTrackEvent(ga_button_id);
-        WordSearchManager wsm = WordSearchManager.getInstance();
-        wsm.Initialize(new GameMode(GameType.Timed, gd, ROUND_TIME_IN_MS), getApplicationContext());
+         WordSearchManager wsm = WordSearchManager.getInstance();
+        wsm.Initialize(new GameMode(GameType.Timed, gd, 90000), getApplicationContext());
         wsm.buildWordSearches();
         Intent i = new Intent(getApplicationContext(), Suplevel.class);
         i.putExtra("level", gd);
@@ -160,43 +138,7 @@ public class MenuActivity extends  Activity implements View.OnClickListener, Rew
     @Override
     protected void onResume() {
         super.onResume();
-        //  analyticsTrackScreen(getString(categoryId));
-        WordSearchManager.nullify();
+         WordSearchManager.nullify();
     }
 
-
-    @Override
-    public void onRewardedVideoAdLoaded() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdOpened() {
-
-    }
-
-    @Override
-    public void onRewardedVideoStarted() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdClosed() {
-
-    }
-
-    @Override
-    public void onRewarded(RewardItem rewardItem) {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdLeftApplication() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdFailedToLoad(int i) {
-
-    }
 }

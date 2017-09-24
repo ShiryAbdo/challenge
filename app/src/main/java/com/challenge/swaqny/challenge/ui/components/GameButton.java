@@ -42,10 +42,10 @@ public class GameButton extends Button {
         this.setTypeface(typeface);
         this.setTextColor(Color.WHITE);
         if (DeviceUtils.isTablet(context))
-            this.setTextSize(12);
-        else if (!DeviceUtils.isSmallScreen(context))
             this.setTextSize(15);
+        else if (!DeviceUtils.isSmallScreen(context))
+            this.setTextSize(19);
         else
-            this.setTextSize(12);
+            this.setTextSize(15);
     }
 }

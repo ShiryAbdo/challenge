@@ -7,8 +7,8 @@ android {
         applicationId "com.challenge.swaqny.challenge"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -33,7 +33,7 @@ dependencies {
     compile 'com.intuit.sdp:sdp-android:1.0.4'
     compile 'com.google.android.gms:play-services-ads:7.8.0'
     compile 'com.android.support:support-v13:26.+'
-    //    compile 'com.android.support:design:26.+'
+    compile 'com.android.support:design:26.+'
     compile 'com.android.support:recyclerview-v7:26.+'
     compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
     testCompile 'junit:junit:4.12'
