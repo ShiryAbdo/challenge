@@ -9,6 +9,7 @@
 
     <LinearLayout
         android:id="@+id/llTop"
+        android:paddingTop="@dimen/_3sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -154,50 +155,53 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:gravity="center"
                 android:id="@+id/llBottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_6sdp"
                 android:layout_marginBottom="@dimen/_6sdp"
                 android:orientation="horizontal"
                 android:weightSum="1">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50">
 
-                    <com.challenge.swaqny.challenge.ui.components.GameButton
+
+                    <Button
                         android:id="@+id/bPause"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/_6sdp"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginLeft="@dimen/_3sdp"
                         android:layout_marginStart="@dimen/_3sdp"
+                        android:background="@drawable/rounded_border"
                         android:text="Pause"
-                        android:layout_marginLeft="@dimen/_3sdp" />
-                </RelativeLayout>
+                        android:textColor="#ffffff"
+                        android:textAllCaps="false" />
+                <TextView
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="wrap_content" />
 
-                <RelativeLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50">
 
-                    <com.challenge.swaqny.challenge.ui.components.GameButton
+
+
+                    <Button
                         android:id="@+id/bSkip"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_3sdp"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:background="@drawable/rounded_border"
                         android:text="Skip"
-                        android:layout_marginRight="@dimen/_3sdp" />
-                </RelativeLayout>
+                        android:textColor="#ffffff"
+                        android:textAllCaps="false" />
+
 
 
             </LinearLayout>
 
             <com.google.android.gms.ads.AdView
                 android:id="@+id/adView"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 ads:adSize="BANNER"
                 ads:adUnitId="ca-app-pub-1858974607441283/5516844088"/>

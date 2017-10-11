@@ -63,7 +63,7 @@ String backGroundColor,level;
         sharedPreferences= getSharedPreferences(level, Context.MODE_PRIVATE);
 
         newScore.add(0);
-        for(int i = 1; i <=sharedPreferences.getAll().size();){
+        for(int i = 0; i <=sharedPreferences.getAll().size();){
             newScore.add(sharedPreferences.getString(Integer.toString(i), ""));
             i++;
 
